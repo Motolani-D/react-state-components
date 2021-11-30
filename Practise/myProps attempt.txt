@@ -1,0 +1,88 @@
+import React from "react";
+import ReactDom from "react-dom";
+import "./index.css";
+
+{
+  /*this is my first attenpt at using props. WHat i did where was to define the items i want o display on the screen as oblect and
+stated their properties. */
+}
+const itemOne = {
+  img: "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/39/645187/1.jpg?8634",
+  title: "Sleep Lounge wear",
+  price: "#5,700.00",
+  category: "Men, Sleep wear",
+};
+const itemTwo = {
+  img: "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/88/436187/1.jpg?5505",
+  title: "Sleep Lounge wear",
+  price: "#8,700.00",
+  category: "Men, Sleep wear",
+};
+
+const itemThree = {
+  img: "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/762754/1.jpg?2487",
+  title: "Fur Bathrobe",
+  price: "#9,700.00",
+  category: "Men, Sleep wear",
+};
+
+const itemFour = {
+  img: "https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/80/570757/1.jpg?1189",
+  title: "Sleepwear and crooks",
+  price: "#7,500.00",
+  category: "Men, Sleep wear",
+};
+
+{
+  /*this is the finction rendering the items in the browser*/
+}
+function BookList() {
+  return (
+    <div className="ourBody">
+      <Item
+        img={itemOne.img}
+        title={itemOne.title}
+        price={itemOne.price}
+        category={itemOne.category}
+      />
+      <Item
+        img={itemTwo.img}
+        title={itemTwo.title}
+        price={itemTwo.price}
+        category={itemTwo.category}
+      />
+      <Item
+        img={itemThree.img}
+        title={itemThree.title}
+        price={itemThree.price}
+        category={itemThree.category}
+      />
+
+      <Item
+        img={itemFour.img}
+        title={itemFour.title}
+        price={itemFour.price}
+        category={itemFour.category}
+      />
+    </div>
+  );
+}
+
+{
+  /*This us where i define what each component to be rendered should be and i am doing this by referencing the properties*/
+}
+const Item = (props) => {
+  return (
+    <article>
+      <img src={props.img} alt="" />
+      <h4>{props.title}</h4>
+      <h5>{props.price}</h5>
+      <p>{props.category}</p>
+    </article>
+  );
+};
+
+// const Greetin = () => {
+//   return React.createElement("h1", {}, "hello there");
+// };
+ReactDom.render(<BookList />, document.getElementById("root"));
